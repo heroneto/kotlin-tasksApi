@@ -1,4 +1,4 @@
-package com.example.tasks
+package com.heroneto.todolist
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

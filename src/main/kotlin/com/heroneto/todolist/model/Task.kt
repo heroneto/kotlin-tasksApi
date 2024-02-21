@@ -1,6 +1,6 @@
-package com.example.tasks
+package com.heroneto.todolist.model
 
-data class Tasks(
+data class Task(
     val id: String? = null,
     val title: String,
     val done: Boolean? = false

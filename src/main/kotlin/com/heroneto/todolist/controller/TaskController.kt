@@ -1,5 +1,6 @@
-package com.example.tasks
+package com.heroneto.todolist.controller
 
+import com.heroneto.todolist.model.Task
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -33,7 +34,7 @@ class TasksController() {
     fun get() = tasksMock
 
     @PostMapping()
-    fun create(@RequestBody task: Tasks) : Tasks {
+    fun create(@RequestBody task: Task) : Task {
         println(task)
         return task
     }
@@ -45,7 +46,7 @@ class TasksController() {
     }
 
     @PutMapping("/{id}")
-    fun update(@PathVariable id: String, @RequestBody task: Tasks) : String{
+    fun update(@PathVariable id: String, @RequestBody task: Task) : String{
         println(id)
         println(task)
         return "task " + id + " updated"

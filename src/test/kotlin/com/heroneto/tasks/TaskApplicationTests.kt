@@ -1,10 +1,10 @@
-package com.example.tasks
+package com.heroneto.tasks
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class TasksApplicationTests {
+class TaskApplicationTests {
 
 	@Test
 	fun contextLoads() {
