@@ -8,6 +8,5 @@ class TodoListApplication
 
 
 suspend fun main(args: Array<String>) {
-	setupConnection()
-//	runApplication<TodoListApplication>(*args)
+	runApplication<TodoListApplication>(*args)
 }
