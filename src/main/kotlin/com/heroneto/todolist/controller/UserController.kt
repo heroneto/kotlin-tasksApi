@@ -1,6 +1,7 @@
 package com.heroneto.todolist.controller
 
 
+import com.heroneto.todolist.model.User
 import com.heroneto.todolist.service.UserService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -18,11 +19,8 @@ class UserController(private val userService: UserService) {
     @GetMapping()
     fun get() = userService.getAllUsers()
 
-//    @PostMapping()
-//    fun create(@RequestBody user: User) : User {
-//        println(user)
-//        return user
-//    }
+    @PostMapping()
+    fun create(@RequestBody user: User) = userService.createUser(user)
 //
 //    @DeleteMapping("/{id}")
 //    fun delete(@PathVariable id: String) : String {
