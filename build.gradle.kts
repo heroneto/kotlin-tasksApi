@@ -28,6 +28,9 @@ dependencies {
 	implementation("org.mongodb:mongodb-driver-kotlin-coroutine:4.10.1")
 
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+
+	implementation("org.springframework.boot:spring-boot-starter-security")
+
 }
 
 tasks.withType<KotlinCompile> {
