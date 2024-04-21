@@ -2,7 +2,7 @@ package com.heroneto.todolist.service
 
 import com.heroneto.todolist.model.User
 import com.heroneto.todolist.repository.UserRepository
-import org.springframework.http.ResponseEntity
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Service
 import java.util.*
 
@@ -13,9 +13,12 @@ class UserService(
     fun getAllUsers(): List<User> = userRepository.findAll()
 
     fun createUser(newUser: User): User {
-        val myUuid = UUID.randomUUID()
-        val myUuidAsString = myUuid.toString()
-        return userRepository.save(newUser)
+
+        val passwordEncoder = BCryptPasswordEncoder()
+        val hashedPassword = passwordEncoder.encode(newUser.password)
+
+        val userToSave = User(username = newUser.username, password = hashedPassword)
+        return userRepository.save(userToSave)
     }
 
     fun deleteUser(id: String) {

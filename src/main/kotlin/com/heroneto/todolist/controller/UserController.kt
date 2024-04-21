@@ -18,7 +18,10 @@ import org.springframework.web.bind.annotation.RestController
 class UserController(private val userService: UserService) {
 
     @GetMapping()
-    fun get() = userService.getAllUsers()
+    fun get() : List<UserResponse> =
+        userService.getAllUsers().map { it.toResponse() }
+
+    private fun User.toResponse() : UserResponse = UserResponse(username = this.username, id = this.id)
 
     @PostMapping()
     fun create(@RequestBody user: User) = userService.createUser(user)

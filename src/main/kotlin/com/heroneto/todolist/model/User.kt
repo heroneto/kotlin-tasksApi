@@ -1,5 +1,6 @@
 package com.heroneto.todolist.model
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import org.bson.types.ObjectId
 import org.springframework.aot.generate.Generated
 import org.springframework.data.annotation.Id
